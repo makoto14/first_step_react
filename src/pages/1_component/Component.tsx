@@ -1,6 +1,6 @@
 import React from "react";
 
-const Component: React.VFC = () => {
+const Component: React.FC = () => {
   return (
     <>
       <SubComponent name={"Makoto"} />
@@ -15,6 +15,6 @@ type Prop = {
   name: string;
 };
 
-const SubComponent: React.VFC<Prop> = (props) => {
+const SubComponent: React.FC<Prop> = (props) => {
   return <div>{props.name}</div>;
 };

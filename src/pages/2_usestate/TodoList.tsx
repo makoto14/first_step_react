@@ -13,7 +13,7 @@ type Prop = {
   // setTodoList: React.Dispatch<React.SetStateAction<TodoType[]>>;
 };
 
-const TodoList: React.VFC<Prop> = (props) => {
+const TodoList: React.FC<Prop> = (props) => {
   const [checked, setChecked] = React.useState([0]);
 
   const handleToggle = (value: number) => () => {

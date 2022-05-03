@@ -4,7 +4,7 @@ import React from "react";
 import TodoList from "./TodoList";
 import { TodoType } from "./TodoType";
 
-const UseState: React.VFC = () => {
+const UseState: React.FC = () => {
   const [name, setName] = React.useState<string>("");
   const [num, setNum] = React.useState<number>(0);
   const [todoList, setTodoList] = React.useState<TodoType[]>([]);

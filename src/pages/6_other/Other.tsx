@@ -1,6 +1,6 @@
 import React from "react";
 
-const Other: React.VFC = () => {
+const Other: React.FC = () => {
   return <>Other</>;
 };
 

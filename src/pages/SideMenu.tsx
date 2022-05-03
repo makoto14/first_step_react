@@ -17,7 +17,7 @@ type pageType = {
   url: string;
 };
 
-const SideMenu: React.VFC = () => {
+const SideMenu: React.FC = () => {
   const navigate = useNavigate();
 
   const [isOpen, setOpen] = React.useState<boolean>(false);

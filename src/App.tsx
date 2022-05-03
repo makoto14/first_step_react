@@ -12,7 +12,7 @@ import Main from "./pages/Main";
 import SideMenu from "./pages/SideMenu";
 import { store } from "./store/store";
 
-const App: React.VFC = () => {
+const App: React.FC = () => {
   return (
     <div
       css={css`

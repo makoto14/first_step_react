@@ -1,6 +1,6 @@
 import React from "react";
 
-const UseEffect: React.VFC = () => {
+const UseEffect: React.FC = () => {
   return <>UseEffect</>;
 };
 

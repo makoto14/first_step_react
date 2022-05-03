@@ -3,7 +3,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getTestNum, setTestNum } from "../store/testStore";
 
-const Main: React.VFC = () => {
+const Main: React.FC = () => {
   const dispatch = useDispatch();
   const testNum: number = useSelector(getTestNum);
 

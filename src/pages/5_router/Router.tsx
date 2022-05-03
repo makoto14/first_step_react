@@ -1,6 +1,6 @@
 import React from "react";
 
-const ReactRouter: React.VFC = () => {
+const ReactRouter: React.FC = () => {
   return <>ReactRouter</>;
 };
 

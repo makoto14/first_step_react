@@ -89,7 +89,8 @@ const SideMenu: React.VFC = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            First step React.js
+            {/* First step React.js */}
+            Test
           </Typography>
         </Toolbar>
       </AppBar>

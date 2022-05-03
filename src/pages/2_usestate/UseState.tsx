@@ -19,24 +19,36 @@ const UseState: React.FC = () => {
     };
     temp.push(newTodo);
     setTodoList(temp);
+    setName("");
   };
 
-  const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setName(event.target.value);
+  const deleteTodo = (index: number) => {
+    const newTodoList = todoList.filter((todo) => todo.id !== index);
+    setTodoList(newTodoList);
+  };
+
+  const toggleTodo = (index: number) => {
+    const newTodoList = todoList.map((todo) => {
+      if (todo.id === index) {
+        todo.isDone = !todo.isDone;
+      }
+      return todo;
+    });
+    setTodoList(newTodoList);
   };
 
   return (
     <div>
       <div>
         <TextField
-          id="outlined-basic"
+          id="todo-title"
           label="Name"
           variant="outlined"
           value={name}
-          onChange={handleNameChange}
+          onChange={(e) => setName(e.target.value)}
         />
         <span>name: {name}</span>
-        <Button variant="text" color="primary" onClick={addTodo}>
+        <Button id="add-todo" variant="text" color="primary" onClick={addTodo}>
           Add Todo
         </Button>
       </div>
@@ -48,9 +60,14 @@ const UseState: React.FC = () => {
       </div>
       <div>
         <div>TODO List</div>
-        <List>
+        <List id="todo-list">
           {todoList.map((todo) => (
-            <TodoList key={todo.id} todo={todo} />
+            <TodoList
+              key={todo.id}
+              todo={todo}
+              deleteTodo={deleteTodo}
+              toggleTodo={toggleTodo}
+            />
           ))}
         </List>
       </div>

@@ -22,14 +22,14 @@ const UseState: React.FC = () => {
     setName("");
   };
 
-  const deleteTodo = (index: number) => {
-    const newTodoList = todoList.filter((todo) => todo.id !== index);
+  const deleteTodo = (todoIndex: number) => {
+    const newTodoList = todoList.filter((todo) => todo.id !== todoIndex);
     setTodoList(newTodoList);
   };
 
-  const toggleTodo = (index: number) => {
+  const toggleTodo = (todoIndex: number) => {
     const newTodoList = todoList.map((todo) => {
-      if (todo.id === index) {
+      if (todo.id === todoIndex) {
         todo.isDone = !todo.isDone;
       }
       return todo;
@@ -47,16 +47,9 @@ const UseState: React.FC = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <span>name: {name}</span>
         <Button id="add-todo" variant="text" color="primary" onClick={addTodo}>
           Add Todo
         </Button>
-      </div>
-      <div>
-        <Button variant="text" color="primary" onClick={() => setNum(num + 1)}>
-          Increment Num
-        </Button>
-        <span>num: {num}</span>
       </div>
       <div>
         <div>TODO List</div>
